@@ -1,0 +1,78 @@
+<div v-if='!fetchError && peopleToShow' class='container'>
+  <div class='input-group'>
+    <input v-model='inputModel' type='text' />
+    <button class='search-button'>
+      <img alt='search' src='@/assets/img/search.png' @click='filterPeople()' />
+    </button>
+  </div>
+
+  <div v-if='Object.keys(peopleToShow).length > 0' class='list-of-people'>
+    <main-card-component v-for='people in peopleToShow' :key='people.name' :email='people.email' :name='people.name'
+                         :phone='people.phone' @click='setModal(people.name)' />
+  </div>
+  <div v-else class='home'>
+    <h2>Нет контента, отвечающего поиску</h2>
+  </div>
+
+  
+  <div v-if='showModal' class='modal-overlay' @click='setModal(null)'>
+  </div>
+  <div v-if='showModal' class='modal'>
+    <div class='people-block'>
+      <div class='name'>
+        {{ showModal.name }}
+        <img alt='close' class='close-button' src='@/assets/img/cross.png' @click='setModal(null)' />
+      </div>
+
+      <div class='rows'>
+        <div class='dark-modal-text'>
+          Телефон:
+        </div>
+        <div class='light-modal-text'>
+          {{ showModal.phone }}
+        </div>
+        <div class='dark-modal-text'>
+          Почта:
+        </div>
+        <div class='light-modal-text'>
+          {{ showModal.email }}
+        </div>
+        <div class='dark-modal-text'>
+          Дата приёма:
+        </div>
+        <div class='light-modal-text'>
+          {{ formatDate(showModal.hire_date) }}
+        </div>
+        <div class='dark-modal-text'>
+          Должность:
+        </div>
+        <div class='light-modal-text'>
+          {{ showModal.position_name }}
+        </div>
+        <div class='dark-modal-text'>
+          Подразделение:
+        </div>
+        <div class='light-modal-text'>
+          {{ showModal.department }}
+        </div>
+      </div>
+      <div class='dark-modal-text'>
+        Дополнительная информация:
+      </div>
+      <div class='light-modal-text'>
+        <p>
+          Будь это рабочий процесс, я бы, естественно, задал вопрос о том, что тут писать. Но так как это тестовое
+          задание — просто возьму должность и подразделение для демонстрации :)
+        </p>
+        {{ showModal.position_name }}
+        {{ showModal.department }}
+      </div>
+    </div>
+  </div>
+
+
+</div>
+<div v-else class='home'>
+  <h2 v-if='!fetchError'>Ожидайте загрузки контента</h2>
+  <h2 v-else> Ошибка получения данных с API </h2>
+</div>

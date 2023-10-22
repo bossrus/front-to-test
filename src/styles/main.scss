@@ -1,0 +1,30 @@
+@import "colors";
+@import "header";
+@import "input-group";
+@import "people-block";
+@import "modal-block";
+
+body {
+  background-color: white;
+  padding: 0;
+  margin: 0;
+
+  font-family: system-ui, sans-serif;
+
+  .font-bold {
+    font-weight: bold;
+  }
+
+  .home {
+    align-items: center;
+    justify-content: center;
+    padding: 100px;
+  }
+
+  .container {
+    display: flex;
+    padding: 50px;
+    flex-direction: column;
+  }
+}
+

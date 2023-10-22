@@ -1,0 +1,147 @@
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background-color: #f1f1f1;
+}
+header nav {
+  justify-content: center;
+  display: flex;
+  gap: 30px;
+}
+header nav .active {
+  font-weight: bold;
+  color: black;
+}
+
+.input-group {
+  position: relative;
+  width: 100%;
+  margin-bottom: 0.5em;
+}
+.input-group input {
+  width: 100%;
+  height: 2em;
+  border-radius: 2em;
+  border: solid 1px #D4DEFE;
+  text-indent: 1em;
+}
+.input-group .search-button {
+  position: absolute;
+  top: 50%;
+  right: 0.6em;
+  transform: translateY(-40%);
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.input-group .search-button img {
+  width: 1em;
+  height: auto;
+}
+
+.list-of-people {
+  display: flex;
+  gap: 17px;
+  padding: 10px 0;
+  width: 100%;
+  height: 100%;
+  flex-wrap: wrap;
+}
+.list-of-people .name {
+  font-weight: bold;
+  color: #262C40;
+  padding-bottom: 1em;
+}
+.list-of-people .people-block {
+  flex-grow: 1;
+  width: 12em;
+  height: 10em;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  padding: 1em;
+}
+.list-of-people .people-block .rows {
+  display: grid;
+  grid-template-columns: 1.6em auto;
+  gap: 10px;
+}
+.list-of-people .people-block .rows .picture {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.list-of-people .people-block .rows .text {
+  display: flex;
+  align-items: center;
+  font-size: xx-small;
+  color: #8189A3;
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  z-index: 9999;
+}
+.modal .name {
+  font-weight: bold;
+  color: #262C40;
+  padding-bottom: 1em;
+  display: flex;
+  justify-content: space-between;
+}
+.modal .name .close-button {
+  width: 0.7em;
+  height: 0.7em;
+  align-self: center;
+}
+.modal .rows {
+  display: grid;
+  grid-template-columns: 9em auto;
+  gap: 10px;
+  padding-top: 1em;
+  padding-bottom: 2em;
+}
+.modal .light-modal-text {
+  font-size: small;
+  color: #8189A3;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 9998;
+}
+
+body {
+  background-color: white;
+  padding: 0;
+  margin: 0;
+  font-family: system-ui, sans-serif;
+}
+body .font-bold {
+  font-weight: bold;
+}
+body .home {
+  align-items: center;
+  justify-content: center;
+  padding: 100px;
+}
+body .container {
+  display: flex;
+  padding: 50px;
+  flex-direction: column;
+}
+
+/*# sourceMappingURL=main.css.map */
