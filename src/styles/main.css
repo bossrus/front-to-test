@@ -86,7 +86,7 @@ header nav .active {
   transform: translate(-50%, -50%);
   background-color: #fff;
   padding: 20px;
-  border-radius: 4px;
+  border-radius: 0.6em;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   z-index: 9999;
 }

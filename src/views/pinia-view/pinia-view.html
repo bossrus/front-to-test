@@ -14,7 +14,7 @@
     <h2>Нет контента, отвечающего поиску</h2>
   </div>
 
-  
+
   <div v-if='showModal' class='modal-overlay' @click='setModal(null)'>
   </div>
   <div v-if='showModal' class='modal'>
@@ -62,10 +62,9 @@
       <div class='light-modal-text'>
         <p>
           Будь это рабочий процесс, я бы, естественно, задал вопрос о том, что тут писать. Но так как это тестовое
-          задание — просто возьму должность и подразделение для демонстрации :)
+          задание — просто возьму неиспользуемое поле адрес
         </p>
-        {{ showModal.position_name }}
-        {{ showModal.department }}
+        {{ showModal.address }}
       </div>
     </div>
   </div>
